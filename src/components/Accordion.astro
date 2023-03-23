@@ -1,0 +1,49 @@
+---
+export interface Props {
+	title: string;
+}
+const { title } = Astro.props;
+---
+<button class="accordion cursor-pointer p-2.5 w-full outline-none text-title text-lg font-bold">
+	<div class="flex justify-between items-center">
+		{title}
+	<div class="bg-highlight rounded-full h-5 w-5 object-contain">
+		<svg 
+		clip-rule="evenodd" 
+		fill-rule="evenodd" 
+		stroke-linejoin="round" 
+		stroke-miterlimit="2" 
+		viewBox="0 0 24 24" 
+		xmlns="http://www.w3.org/2000/svg">
+		<path d="m16.843 13.789c.108.141.157.3.157.456 0 .389-.306.755-.749.755h-8.501c-.445 0-.75-.367-.75-.755 0-.157.05-.316.159-.457 1.203-1.554 3.252-4.199 4.258-5.498.142-.184.36-.29.592-.29.23 0 .449.107.591.291 1.002 1.299 3.044 3.945 4.243 5.498z"/>
+	</svg>
+	</div>
+	</div>
+	
+</button>
+<div class="panel px-2.5 text-title">
+	<slot />
+</div>
+<style>
+	/* Style the buttons that are used to open and close the accordion panel */
+.accordion {
+	text-align: left;
+	transition: 0.4s;
+	border-bottom: 1px solid #474953;
+}
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .accordion:hover {
+	background-color: #191A1F;
+}
+.active{
+	background-color: #191A1F;
+	border-bottom: 1px solid #191A1F;
+}
+/* Style the accordion panel. Note: hidden by default */
+.panel {
+	background-color: #191A1F;
+	max-height: 0;
+	overflow: hidden;
+	transition: max-height 0.2s ease-out;
+}
+</style>

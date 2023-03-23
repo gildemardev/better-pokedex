@@ -1,0 +1,13 @@
+---
+export interface Props {
+	title: string;
+	size: number;
+}
+const { title, size } = Astro.props;
+---
+<div class="py-2">
+	<h1>{title}</h1>
+	<div class="w-full h-1 bg-white rounded-lg mt-1">
+		<div class="h-1 rounded-lg bg-highlight" style={`width: ${size}%;`}></div>
+	</div>
+</div>

@@ -1,0 +1,73 @@
+---
+import Accordion from "./Accordion.astro";
+import Statbar from "./Statbar.astro";
+
+---
+<div class="bg-[#1D1E22] h-full px-6 py-6 lg:fixed lg:right-0 lg:overflow-y-scroll">
+	<div>
+	<input class="bg-[#2E3039] border-none px-3 h-12 rounded-md w-full text-white active:ring-highlight focus:ring-highlight" type="text" placeholder="Pesquisar Pokémon..." />		
+	</div>
+	<div class="mt-3">
+		<Accordion title="Stats:">
+			<Statbar title="HP:" size={55} />
+			<Statbar title="Attack:" size={75} />
+			<Statbar title="Defense:" size={35} />
+			<Statbar title="Special Attack:" size={63} />
+			<Statbar title="Special Defense:" size={40} />
+			<Statbar title="Speed:" size={64} />
+		</Accordion>
+		<Accordion title="Training:">
+			<ul class="text-[#969696] flex flex-col gap-2 mb-3">
+				<li><p><strong class="text-title">EV yield:</strong> 2 Special Defense</p></li>
+				<li><p><strong class="text-title">Catch rate:</strong> 45 (5.9% with PokéBall, full HP)</p></li>
+				<li><p><strong class="text-title">Catch rate:</strong> 35 (lower than normal)</p></li>
+				<li><p><strong class="text-title">Base Exp.:</strong> 184</p></li>
+				<li><p><strong class="text-title" >Growth Rate	:</strong> Medium Fast</p></li>
+			</ul>
+		</Accordion>
+		<Accordion title="Breeding:">
+			<ul class="text-[#969696] flex flex-col gap-2 mb-3">
+				<li><p><strong class="text-title">Egg Groups:</strong> Field</p></li>
+				<li><p><strong class="text-title">Gender:</strong> <span class="text-blue-400">87.5% male</span>, <span class="text-pink-400">12.5% female</span> </p></li>
+				<li><p><strong class="text-title">Egg cycles:</strong> 35 (8,739–8,995 steps)</p></li>
+			</ul>
+		</Accordion>
+		<Accordion title="Evolution:">
+			<div class="overflow-hidden flex justify-center items-center object-contain w-32 h-40 bg-[#2E3039] rounded-lg">
+				<img src="/eevee.png" alt="Eevee">
+			</div>
+			<div><p>Eevee <strong>Nº 0133</strong></p></div>	
+		</Accordion>
+		<Accordion title="Where to find Umbreon:">
+			<ul class="text-[#969696] flex flex-col gap-2 mb-3">
+				<li><p><strong class="text-title">185</strong> (Gold/Silver/Crystal)</p></li>
+				<li><p><strong class="text-title">168</strong> (Platinum)</p></li>
+				<li><p><strong class="text-title">189</strong> (HeartGold/SoulSilver)</p></li>
+				<li><p><strong class="text-title">096</strong> (Black 2/White 2)</p></li>
+				<li><p><strong class="text-title">082</strong> (X/Y — Coastal Kalos)</p></li>
+				<li><p><strong class="text-title">128</strong> (Sun/Moon — Alola dex)</p></li>
+				<li><p><strong class="text-title">158</strong> (U.Sun/U.Moon — Alola dex)</p></li>
+				<li><p><strong class="text-title">201</strong> (Sword/Shield)</p></li>
+				<li><p><strong class="text-title">030</strong> (Legends: Arceus)</p></li>
+				<li><p><strong class="text-title">184</strong> (Scarlet/Violet)</p></li>
+				<li><p><strong class="text-title">078</strong> (The Crown Tundra)</p></li>
+			</ul>
+		</Accordion>
+	</div>
+</div>
+
+<script>
+	var acc = document.getElementsByClassName("accordion");
+	var i;
+	for (i = 0; i < acc.length; i++) {
+		acc[i].addEventListener("click", function() {
+			this.classList.toggle("active");
+			var panel = this.nextElementSibling;
+			if (panel.style.maxHeight) {
+				panel.style.maxHeight = null;
+			} else {
+				panel.style.maxHeight = panel.scrollHeight + "px";
+			}
+		});
+	}
+	</script>

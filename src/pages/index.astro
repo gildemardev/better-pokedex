@@ -1,0 +1,51 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import Sidebar from '../components/Sidebar.astro';
+---
+
+<Layout title="Better Pokedéx.">
+	<main class="min-w-screen w-full grid grid-cols-1 lg:grid-cols-3">
+		<section class="col-span-2">
+			<Hero />
+			<div class="grid sm:grid-cols-2">
+				<div class="bg-[#14151A] px-5 sm:px-14 py-8">
+					<div>
+						<h1 class="text-title font-bold text-xl">Umbreon <span class="text-highlight">Nº0197</span></h1>
+						<p class="text-subtitle"><strong>Category:</strong> Moonlight</p>
+						<p class="text-subtitle"><strong>Abilities:</strong> Synchronize</p>
+					</div>
+					<div class="mt-4 flex flex-col gap-2">
+						<h1 class="text-title font-bold text-xl">Type:</h1>
+						<span class="bg-dark text-white inline-block w-24 text-center font-bold text-sm py-1 rounded-md">Dark</span>
+					</div>
+					<div class="mt-2 flex flex-col gap-2">
+						<h1 class="text-title font-bold text-xl mt-2">Weaknesses:</h1>
+						<div>
+							<span class="bg-fairy mt-2 inline-block w-24 text-center text-black font-bold text-sm py-1 rounded-md">Fairy</span>
+							<span class="bg-bug mt-2 text-white inline-block w-24 text-center font-bold text-sm py-1 rounded-md">Bug</span>
+							<span class="bg-fighting mt-2 text-white inline-block w-24 text-center py-1 font-bold text-sm rounded-md">Fighting</span>						
+						</div>
+				</div>
+				</div>
+				<div class="px-5 sm:px-14 py-8 flex flex-col gap-[10px]">
+					<h1 class="text-title font-bold text-xl">Infos</h1>
+					<p class="text-subtitle">
+						When exposed to the moon’s aura, the rings on its body glow faintly and it gains a mysterious power.
+					</p>
+					<h1 class="text-title font-bold text-xl">Dados Técnicos</h1>
+					<ul class="text-subtitle">
+						<li><p><strong>Height:</strong> 1.0m</p></li>
+						<li><p><strong>Weight:</strong> 27.0kg</p></li>
+						<li><p><strong>Gender:</strong> Male/Female</p></li>
+					</ul>
+				</div>
+			</div>
+		</section>
+		<section class="col-span-1">
+			<Sidebar />
+		</section>
+	</main>
+</Layout>
+<style>
+</style>
